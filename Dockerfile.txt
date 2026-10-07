@@ -1,0 +1,7 @@
+FROM tomcat:11-jre25-temurin-noble
+
+COPY StudentApp.war /usr/local/tomcat/webapps/ROOT.war
+
+RUN sed -i 's/port="8080"/port="10000"/' /usr/local/tomcat/conf/server.xml
+
+EXPOSE 10000
